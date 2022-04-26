@@ -23,6 +23,7 @@ public class Main {
                     ZipEntry entry = new ZipEntry(file.getName());
                     zops.putNextEntry(entry);
                     byte[] bytes = new byte[fileInput.available()];
+                    fileInput.read(bytes);
                     zops.write(bytes);
                     zops.closeEntry();
                     fileInput.close();
